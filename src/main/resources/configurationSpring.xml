@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="myLogger" class="LoggerImpl" >
+        <property name="name" value="mójLogger"/>
+        <property name="version" value="2"/>
+    </bean>
+    <bean id="usersRepository"
+          class="UsersRepositoryImpl">
+        <property name="logger" ref="myLogger"/>
+    </bean>
+
+</beans>
